@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.tops.viewmodeldemo.R
 import com.tops.viewmodeldemo.ViewModels.QuotesViewModel
 import com.tops.viewmodeldemo.databinding.FragmentThoughtBinding
@@ -41,6 +42,10 @@ class ThoughtFragment : Fragment() {
 
         binding.btnNext.setOnClickListener {
             quotesviewmodel.randomGenerate()
+        }
+
+        binding.btncalc.setOnClickListener {
+            findNavController().navigate(R.id.action_thoughtFragment_to_calCFragment)
         }
 
     }

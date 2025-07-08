@@ -9,5 +9,18 @@
         android:id="@+id/thoughtFragment"
         android:name="com.tops.viewmodeldemo.Fragments.ThoughtFragment"
         android:label="fragment_thought"
-        tools:layout="@layout/fragment_thought" />
+        tools:layout="@layout/fragment_thought" >
+        <action
+            android:id="@+id/action_thoughtFragment_to_calCFragment"
+            app:destination="@id/calCFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calCFragment"
+        android:name="com.tops.viewmodeldemo.Fragments.CalCFragment"
+        android:label="fragment_cal_c"
+        tools:layout="@layout/fragment_cal_c" >
+        <action
+            android:id="@+id/action_calCFragment_to_thoughtFragment"
+            app:destination="@id/thoughtFragment" />
+    </fragment>
 </navigation>
