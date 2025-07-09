@@ -41,64 +41,22 @@ private val calcviewmodel: CalcViewModel by viewModels()
 
 
         binding.btnAdd.setOnClickListener {
-//            val num1 = binding.etNum1.text.toString()
-//            val num2= binding.etNum2.text.toString()
-//
-//            if (num1.isNotEmpty() && num2.isNotEmpty()){
-//                oper = "Add"
-//                calcviewmodel.getresult(num1.toInt(),num2.toInt(),oper)
-//                binding.etNum1.text?.clear()
-//                binding.etNum2.text?.clear()
-//            }else{
-//                binding.tvresult.text = "Please fill both input fields"
-//            }
+
             InputAndCalc("Add")
         }
 
         binding.btnSub.setOnClickListener {
-//            val num1 = binding.etNum1.text.toString()
-//            val num2= binding.etNum2.text.toString()
-//
-//            if (num1.isNotEmpty() && num2.isNotEmpty()){
-//                oper = "Sub"
-//                calcviewmodel.getresult(num1.toInt(),num2.toInt(),oper)
-//                binding.etNum1.text?.clear()
-//                binding.etNum2.text?.clear()
-//            }else{
-//                binding.tvresult.text = "Please fill both input fields"
-//            }
+
             InputAndCalc("Sub")
         }
 
         binding.btnMul.setOnClickListener {
-//            val num1 = binding.etNum1.text.toString()
-//            val num2= binding.etNum2.text.toString()
-//
-//            if (num1.isNotEmpty() && num2.isNotEmpty()){
-//                oper = "Mul"
-//                calcviewmodel.getresult(num1.toInt(),num2.toInt(),oper)
-//                binding.etNum1.text?.clear()
-//                binding.etNum2.text?.clear()
-//            }else{
-//                binding.tvresult.text = "Please fill both input fields"
-//            }
+
             InputAndCalc("Mul")
         }
 
         binding.btnDiv.setOnClickListener {
-//            val num1 = binding.etNum1.text.toString()
-//            val num2= binding.etNum2.text.toString()
-//
-//            if (num1.isNotEmpty() && num2.isNotEmpty() && num2 !== "0"){
-//                oper = "Div"
-//                calcviewmodel.getresult(num1.toInt(),num2.toInt(),oper)
-//                binding.etNum1.text?.clear()
-//                binding.etNum2.text?.clear()
-//            }else if (num2 == "0"){
-//                binding.tvresult.text = "Number can't Divisible by Zero!!"
-//            }else{
-//                binding.tvresult.text = "Please Enter Numbers!!"
-//            }
+
             InputAndCalc("Div")
         }
 
