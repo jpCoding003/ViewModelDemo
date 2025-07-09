@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_thoughtFragment_to_calCFragment"
             app:destination="@id/calCFragment" />
+        <action
+            android:id="@+id/action_thoughtFragment_to_rvShowQuoteFragment"
+            app:destination="@id/rvShowQuoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/calCFragment"
@@ -21,6 +24,15 @@
         tools:layout="@layout/fragment_cal_c" >
         <action
             android:id="@+id/action_calCFragment_to_thoughtFragment"
+            app:destination="@id/thoughtFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rvShowQuoteFragment"
+        android:name="com.tops.viewmodeldemo.Fragments.RvShowQuoteFragment"
+        android:label="fragment_rv_show_quote"
+        tools:layout="@layout/fragment_rv_show_quote" >
+        <action
+            android:id="@+id/action_rvShowQuoteFragment_to_thoughtFragment"
             app:destination="@id/thoughtFragment" />
     </fragment>
 </navigation>

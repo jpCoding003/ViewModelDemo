@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import com.tops.viewmodeldemo.ViewModels.QuotesViewModel
 import com.tops.viewmodeldemo.databinding.ActivityMainBinding
+import com.tops.viewmodeldemo.model.QuotesData
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding  = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -26,12 +27,5 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        quotesviewmodel.quotes.observe(this, Observer<String>{
-            u-> binding.tvQuotes.setText(u)
-        })
-
-        binding.btnNext.setOnClickListener {
-            quotesviewmodel.randomGenerate()
-        }
     }
 }

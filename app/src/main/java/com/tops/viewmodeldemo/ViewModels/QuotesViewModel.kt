@@ -3,12 +3,13 @@ package com.tops.viewmodeldemo.ViewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.tops.viewmodeldemo.model.QuotesData
 
 class QuotesViewModel: ViewModel() {
 
-    private var _quotes = MutableLiveData<String>()
+    private val _quotes = MutableLiveData<List<QuotesData>>()
 
-    val quotesList = listOf<String>(
+    val quotesList = listOf(
         "Your Hunger Decides Your Legacy",
         "Success is Not Accident",
         "Work Hard, Get Sucess",
@@ -27,14 +28,15 @@ class QuotesViewModel: ViewModel() {
         "Work until your idols become your competition."
     )
 
-    val quotes: LiveData<String> = _quotes
+    val quotes: LiveData<List<QuotesData>> = _quotes
 
-//    init {
-//        _quotes = quotesList[0]
-//    }
-
-    fun randomGenerate(){
-    val result = quotesList.random()
-    _quotes.value = result
+    init {
+        _quotes.value = quotesList.map { QuotesData(it) }
     }
+
+
+//    fun randomGenerate(){
+//    val result = quotesList.random()
+//    _quotes.value = result
+//    }
 }
