@@ -7,7 +7,7 @@ import com.tops.viewmodeldemo.databinding.RowQuotesItemBinding
 import com.tops.viewmodeldemo.model.QuotesData
 
 
-class MyAdapter(var quotes: List<QuotesData>) : RecyclerView.Adapter<MyAdapter.QuotesShowViewHolder>()  {
+class MyAdapter(var quotes: List<QuotesData>, private val onDeleteClick: (QuotesData) -> Unit) : RecyclerView.Adapter<MyAdapter.QuotesShowViewHolder>()  {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,6 +22,10 @@ class MyAdapter(var quotes: List<QuotesData>) : RecyclerView.Adapter<MyAdapter.Q
     ) {
         val quote = quotes[position]
         holder.binding.tvQuotes.setText(quote.quotes)
+
+        holder.binding.btnDelete.setOnClickListener {
+            onDeleteClick(quote)
+        }
     }
 
     override fun getItemCount(): Int = quotes.size

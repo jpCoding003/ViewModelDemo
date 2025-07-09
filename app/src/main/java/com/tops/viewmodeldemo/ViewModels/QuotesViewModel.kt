@@ -34,6 +34,18 @@ class QuotesViewModel: ViewModel() {
         _quotes.value = quotesList.map { QuotesData(it) }
     }
 
+    fun addQuote(newQuote: QuotesData) {
+        val updatedList = _quotes.value.orEmpty().toMutableList()
+        updatedList.add(newQuote)
+        _quotes.value = updatedList
+    }
+
+    fun deleteQuote(quote: QuotesData) {
+        val updatedList = _quotes.value.orEmpty().toMutableList()
+        updatedList.remove(quote)
+        _quotes.value = updatedList
+    }
+
 
 //    fun randomGenerate(){
 //    val result = quotesList.random()

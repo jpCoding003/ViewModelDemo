@@ -32,7 +32,9 @@ class RvShowQuoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = MyAdapter(emptyList())
+        adapter = MyAdapter(emptyList()){
+            quotesviewmodel.deleteQuote(it)
+        }
         binding.tvQuotes.layoutManager = LinearLayoutManager(requireActivity())
         binding.tvQuotes.adapter = adapter
 
@@ -40,6 +42,12 @@ class RvShowQuoteFragment : Fragment() {
                 quoteList ->
             adapter.updateData(quoteList)
         })
+
+        binding.btnAddQuote.setOnClickListener {
+            val quote = QuotesData(binding.etNewQuote.text.toString())
+            quotesviewmodel.addQuote(quote)
+            binding.etNewQuote.text?.clear()
+        }
 
         binding.btnGoBack.setOnClickListener {
             findNavController().navigate(R.id.action_rvShowQuoteFragment_to_thoughtFragment)
